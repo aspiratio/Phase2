@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/Phase2/hooks-snake-game/static/css/main.24e1f452.chunk.css",
-    "main.js": "/Phase2/hooks-snake-game/static/js/main.809434e6.chunk.js",
-    "main.js.map": "/Phase2/hooks-snake-game/static/js/main.809434e6.chunk.js.map",
-    "runtime-main.js": "/Phase2/hooks-snake-game/static/js/runtime-main.5bcd3e22.js",
-    "runtime-main.js.map": "/Phase2/hooks-snake-game/static/js/runtime-main.5bcd3e22.js.map",
-    "static/js/2.93545101.chunk.js": "/Phase2/hooks-snake-game/static/js/2.93545101.chunk.js",
-    "static/js/2.93545101.chunk.js.map": "/Phase2/hooks-snake-game/static/js/2.93545101.chunk.js.map",
-    "static/js/3.69cb6b0f.chunk.js": "/Phase2/hooks-snake-game/static/js/3.69cb6b0f.chunk.js",
-    "static/js/3.69cb6b0f.chunk.js.map": "/Phase2/hooks-snake-game/static/js/3.69cb6b0f.chunk.js.map",
-    "index.html": "/Phase2/hooks-snake-game/index.html",
-    "static/css/main.24e1f452.chunk.css.map": "/Phase2/hooks-snake-game/static/css/main.24e1f452.chunk.css.map",
-    "static/js/2.93545101.chunk.js.LICENSE.txt": "/Phase2/hooks-snake-game/static/js/2.93545101.chunk.js.LICENSE.txt"
+    "main.css": "/Phase2/static/css/main.24e1f452.chunk.css",
+    "main.js": "/Phase2/static/js/main.809434e6.chunk.js",
+    "main.js.map": "/Phase2/static/js/main.809434e6.chunk.js.map",
+    "runtime-main.js": "/Phase2/static/js/runtime-main.487ad5c0.js",
+    "runtime-main.js.map": "/Phase2/static/js/runtime-main.487ad5c0.js.map",
+    "static/js/2.93545101.chunk.js": "/Phase2/static/js/2.93545101.chunk.js",
+    "static/js/2.93545101.chunk.js.map": "/Phase2/static/js/2.93545101.chunk.js.map",
+    "static/js/3.69cb6b0f.chunk.js": "/Phase2/static/js/3.69cb6b0f.chunk.js",
+    "static/js/3.69cb6b0f.chunk.js.map": "/Phase2/static/js/3.69cb6b0f.chunk.js.map",
+    "index.html": "/Phase2/index.html",
+    "static/css/main.24e1f452.chunk.css.map": "/Phase2/static/css/main.24e1f452.chunk.css.map",
+    "static/js/2.93545101.chunk.js.LICENSE.txt": "/Phase2/static/js/2.93545101.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.5bcd3e22.js",
+    "static/js/runtime-main.487ad5c0.js",
     "static/js/2.93545101.chunk.js",
     "static/css/main.24e1f452.chunk.css",
     "static/js/main.809434e6.chunk.js"
