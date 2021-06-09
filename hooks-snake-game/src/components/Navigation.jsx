@@ -1,5 +1,7 @@
+import { defaultDifficulty, Difficulty } from "../constants";
+
 const Navigation = ({ length, difficulty, onChangeDifficulty }) => {
-  const upVisibility = difficulty < 5 ? "" : "is-hidden";
+  const upVisibility = difficulty < Difficulty.length ? "" : "is-hidden";
   const downVisibility = difficulty < 1 ? "" : "is-hidden";
   const onUpDifficulty = () => onChangeDifficulty(difficulty + 1);
   const onDownDifficulty = () => onChangeDifficulty(difficulty - 1);
