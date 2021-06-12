@@ -1,0 +1,14 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "isEventAttr", function () {
+  return isEventAttr;
+});
+_parcelHelpers.export(exports, "isVNode", function () {
+  return isVNode;
+});
+const isEventAttr = attr => {
+  return (/^on/).test(attr);
+};
+const isVNode = node => {
+  return typeof node !== "string";
+};

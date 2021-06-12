@@ -1,0 +1,14 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "app", function () {
+  return app;
+});
+var _render = require("./render");
+const app = ({root, initialState, view, actions}) => {
+  const $el = document.querySelector(root);
+  let newNode = view(initialState);
+  const renderDOM = function () {
+    $el.appendChild(_render.render(newNode));
+  };
+  renderDOM();
+};

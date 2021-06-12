@@ -1,0 +1,102 @@
+var _vdomCreateElement = require("./vdom/createElement");
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+var _vdomCreateElementDefault = _parcelHelpers.interopDefault(_vdomCreateElement);
+require("./vdom/render");
+var _vdomApp = require("./vdom/app");
+const INITIAL_STATE = {
+  accounts: [{
+    id: 1,
+    name: "リオネル・メッシ",
+    team: "FCバルセロナ",
+    description: "アルゼンチンサンタフェ州ロサリオ出身のイタリア系アルゼンチン人サッカー選手。リーガ・エスパニョーラ・FCバルセロナ所属。アルゼンチン代表。ポジションはフォワード (wikipedia)",
+    isFollow: false
+  }, {
+    id: 2,
+    name: "クリスティアーノ・ロナウド",
+    team: "Juventus",
+    description: "ポルトガル・フンシャル出身のサッカー選手。セリエA・ユヴェントスFC所属。ポルトガル代表。ポジションはフォワード (wikipedia)",
+    isFollow: true
+  }, {
+    id: 3,
+    name: "ネイマール",
+    team: "パリサンジェルマン",
+    description: "ブラジル・サンパウロ州モジ・ダス・クルーゼス出身のサッカー選手。ブラジル代表。リーグ・アン・パリ・サンジェルマンFC所属。ポジションはフォワード (wikipedia)",
+    isFollow: false
+  }]
+};
+const accountItem = (account, action) => {
+  return _vdomCreateElementDefault.default("div", {
+    attrs: {},
+    children: [_vdomCreateElementDefault.default("div", {
+      attrs: {
+        class: "account__summary"
+      },
+      children: [_vdomCreateElementDefault.default("div", {
+        attrs: {},
+        children: [_vdomCreateElementDefault.default("p", {
+          attrs: {
+            class: "account__name"
+          },
+          children: [account.name]
+        }), _vdomCreateElementDefault.default("p", {
+          attrs: {
+            class: "account__team"
+          },
+          children: [account.team]
+        })]
+      }), _vdomCreateElementDefault.default("div", {
+        attrs: {},
+        children: [_vdomCreateElementDefault.default("button", {
+          attrs: {
+            type: "button",
+            class: `followBtn ${account.isFollow ? "isFollow" : ""}`,
+            onclick: () => action.toggleFollow(account.id)
+          },
+          children: [account.isFollow ? "フォロー中" : "フォローする"]
+        })]
+      })]
+    }), _vdomCreateElementDefault.default("p", {
+      attrs: {
+        class: "account__description"
+      },
+      children: [account.description]
+    })]
+  });
+};
+const actions = {
+  toggleFollow(state, id) {
+    const accounts = state.accounts.map(f => {
+      if (f.id === id) {
+        return {
+          ...f,
+          isFollow: !f.isFollow
+        };
+      } else {
+        return f;
+      }
+    });
+    return {
+      ...state,
+      accounts
+    };
+  }
+};
+const view = (props, action) => _vdomCreateElementDefault.default("ul", {
+  attrs: {
+    class: "accountList"
+  },
+  children: props.accounts.map(e => {
+    return _vdomCreateElementDefault.default("li", {
+      attrs: {
+        class: "accountList__item"
+      },
+      children: [accountItem(e, action)]
+    });
+  })
+});
+_vdomApp.app({
+  root: "#app",
+  initialState: INITIAL_STATE,
+  view,
+  actions
+});

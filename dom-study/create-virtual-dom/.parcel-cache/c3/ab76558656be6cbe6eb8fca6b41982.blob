@@ -1,0 +1,37 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "app", function () {
+  return app;
+});
+require("./render");
+var _patch = require("./patch");
+const app = ({root, initialState, view, actions}) => {
+  const $el = document.querySelector(root);
+  let newNode;
+  let oldNode;
+  let state = initialState;
+  const dispatcher = function (actions) {
+    const dispatchedActions = {};
+    for (const key in actions) {
+      const action = actions[key];
+      dispatchedActions[key] = option => {
+        setState(action(state, option));
+        renderDOM();
+      };
+    }
+    return dispatchedActions;
+  };
+  const setState = function (newState) {
+    if (state !== newState) {
+      state = newState;
+    }
+  };
+  const updateNode = function () {
+    newNode = view(state, dispatcher(actions));
+  };
+  const renderDOM = function () {
+    updateNode();
+    _patch.patch($el, newNode, oldNode);
+    oldNode = newNode;
+  };
+};

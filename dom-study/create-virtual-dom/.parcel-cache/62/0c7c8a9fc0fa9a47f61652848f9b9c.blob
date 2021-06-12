@@ -1,0 +1,11 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+exports.default = (tagName, {attrs = {}, children = []}) => {
+  const vElement = Object.create(null);
+  Object.assign(vElement, {
+    tagName,
+    attrs,
+    children
+  });
+  return vElement;
+};

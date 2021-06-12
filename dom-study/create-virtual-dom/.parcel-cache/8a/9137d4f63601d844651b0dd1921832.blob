@@ -1,0 +1,22 @@
+var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+_parcelHelpers.defineInteropFlag(exports);
+_parcelHelpers.export(exports, "render", function () {
+  return render;
+});
+require("./utils");
+function renderElement({tagName, attrs, children}) {
+  const $el = document.createElement(tagName);
+  for (const [k, v] of Object.entries(attrs)) {
+    $el.setAttribute(k, v);
+  }
+  for (const child of children) {
+    $el.appendChild(render(child));
+  }
+  return $el;
+}
+function render(vNode) {
+  if (typeof vNode === "string") {
+    return document.createTextNode(vNode);
+  }
+  return renderElement(vNode);
+}
